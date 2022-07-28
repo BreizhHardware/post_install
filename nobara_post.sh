@@ -32,4 +32,7 @@ echo "gpgkey=https://packages.microsoft.com/keys/microsoft.asc" >> /etc/yum.repo
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
 dnf update
 dnf install -y code
+wget https://raw.githubusercontent.com/BreizhHardware/post_install/main/hwcheck.sh >> hwcheck.sh
+chmod u+x hwcheck.sh
+sh hwcheck.sh
 echo "Préparation terminée, il est recommandé de redémarrer ! Pour appliquer les icons ouvrez ajustement et appliquez kora."
