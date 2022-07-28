@@ -16,13 +16,18 @@ dnf install -y gnome-shell-extension-dash-to-dock htop nmon inxi figlet
 dnf install -y gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
 dnf install -y lame\* --exclude=lame-devel
 dnf group upgrade -y --with-optional Multimedia
+dnf install -y gcc make
+dnf install -y discord
+wget https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors.x86_64.rpm
+chmod u+x onlyoffice-desktopeditors.x86_64.rpm
+dnf install -y onlyoffice-desktopeditors.x86_64.rpm
 git clone https://github.com/bikass/kora.git
 cd kora/
 cp -R kora /usr/share/icons/
 cd ..
 rm -rf kora
 dnf -y autoremove blender kdenlive libreoffice-* lutris protonup-qt winehq-staging wine-staging-common wine-staging64 winetricks yumex-dnf inkscape hplip-common hplip-libs hplip-gui
-dnf -y autoremove baobab cheese epiphany gnome-{calendar,characters,clocks,contacts,dictionary,disk-utility,font-viewer,logs,maps,photos,user-docs,,weather} gucharmap sushi
+dnf -y autoremove baobab cheese epiphany gnome-{characters,contacts,dictionary,font-viewer,logs,maps,user-docs} gucharmap sushi
 echo "[vscode]" > /etc/yum.repos.d/vscode.repo
 echo "name=Visual Studio Code" >> /etc/yum.repos.d/vscode.repo
 echo "baseurl=https://packages.microsoft.com/yumrepos/vscode" >> /etc/yum.repos.d/vscode.repo
@@ -32,7 +37,19 @@ echo "gpgkey=https://packages.microsoft.com/keys/microsoft.asc" >> /etc/yum.repo
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
 dnf update
 dnf install -y code
-wget https://raw.githubusercontent.com/BreizhHardware/post_install/main/hwcheck.sh >> hwcheck.sh
+wget https://raw.githubusercontent.com/BreizhHardware/post_install/main/hwcheck.sh
 chmod u+x hwcheck.sh
 sh hwcheck.sh
+dnf install zsh
+wget 
+
 echo "Préparation terminée, il est recommandé de redémarrer ! Pour appliquer les icons ouvrez ajustement et appliquez kora."
+
+printf '%sDo you want to change your default shell to zsh? [Y/n]%s ' \
+    "$FMT_YELLOW" "$FMT_RESET"
+  read -r opt
+  case $opt in
+    y*|Y*|"") ;;
+    n*|N*) echo "Shell change skipped."; return ;;
+    *) echo "Invalid choice. Shell change skipped."; return ;;
+  esac
