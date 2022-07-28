@@ -16,7 +16,7 @@ dnf install -y gnome-shell-extension-dash-to-dock htop nmon inxi figlet
 dnf install -y gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
 dnf install -y lame\* --exclude=lame-devel
 dnf group upgrade -y --with-optional Multimedia
-dnf install -y gcc make
+dnf install -y gcc make util-linux-user
 dnf install -y discord
 wget https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors.x86_64.rpm
 chmod u+x onlyoffice-desktopeditors.x86_64.rpm
@@ -41,15 +41,7 @@ wget https://raw.githubusercontent.com/BreizhHardware/post_install/main/hwcheck.
 chmod u+x hwcheck.sh
 sh hwcheck.sh
 dnf install zsh
-wget 
+curl -sS https://starship.rs/install.sh | sh
 
-echo "Préparation terminée, il est recommandé de redémarrer ! Pour appliquer les icons ouvrez ajustement et appliquez kora."
 
-printf '%sDo you want to change your default shell to zsh? [Y/n]%s ' \
-    "$FMT_YELLOW" "$FMT_RESET"
-  read -r opt
-  case $opt in
-    y*|Y*|"") ;;
-    n*|N*) echo "Shell change skipped."; return ;;
-    *) echo "Invalid choice. Shell change skipped."; return ;;
-  esac
+echo 'Préparation terminée, executez sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" puis il est recommandé de redémarrer ! Pour appliquer les icons ouvrez ajustement et appliquez kora. Pour la customisation de zsh, executez sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
