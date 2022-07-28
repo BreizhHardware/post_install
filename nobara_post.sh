@@ -44,4 +44,4 @@ dnf install zsh
 curl -sS https://starship.rs/install.sh | sh
 
 
-echo 'Préparation terminée, executez sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" puis il est recommandé de redémarrer ! Pour appliquer les icons ouvrez ajustement et appliquez kora. Pour la customisation de zsh, executez sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
+echo 'Préparation terminée, executez il est recommandé de redémarrer ! Pour appliquer les icons ouvrez ajustement et appliquez kora. Pour la customisation de zsh, executez sh -c "$(curl -fsSL https://raw.githubusercontent.com/BreizhHardware/post_install/main/zsh_custom.sh)"'
