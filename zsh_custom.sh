@@ -4,8 +4,4 @@ wget https://raw.githubusercontent.com/BreizhHardware/post_install/main/.zshrc
 cp .zshrc ~/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
-<<<<<<< HEAD
 rm -rf .zshrc
-=======
-rm -rf .zshrc
->>>>>>> f4136025b8e0efffc0a45b41ffd8bae493aea708
