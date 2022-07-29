@@ -41,6 +41,7 @@ wget https://raw.githubusercontent.com/BreizhHardware/post_install/main/hwcheck.
 chmod u+x hwcheck.sh
 sh hwcheck.sh
 dnf install zsh
+flatpak install -y spotify
 curl -sS https://starship.rs/install.sh | sh
 
 
