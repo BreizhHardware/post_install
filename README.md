@@ -5,4 +5,4 @@ Liste de scripts de post install:
 
 Nobara Linux: 
 
-wget https://raw.githubusercontent.com/BreizhHardware/post_install/main/hwcheck.sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/BreizhHardware/post_install/main/hwcheck.sh)" 
