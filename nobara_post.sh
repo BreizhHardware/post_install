@@ -12,7 +12,7 @@ then
 fi 
 
 dnf -y --nogpgcheck --refresh upgrade
-dnf install -y gnome-shell-extension-dash-to-dock htop nmon inxi figlet
+dnf install -y gnome-shell-extension-dash-to-dock htop nmon inxi figlet btop nvtop
 dnf install -y gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
 dnf install -y lame\* --exclude=lame-devel
 dnf group upgrade -y --with-optional Multimedia
@@ -21,11 +21,6 @@ dnf install -y discord
 wget https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors.x86_64.rpm
 chmod u+x onlyoffice-desktopeditors.x86_64.rpm
 dnf install -y onlyoffice-desktopeditors.x86_64.rpm
-git clone https://github.com/bikass/kora.git
-cd kora/
-cp -R kora /usr/share/icons/
-cd ..
-rm -rf kora
 dnf -y autoremove blender kdenlive libreoffice-* lutris protonup-qt winehq-staging wine-staging-common wine-staging64 winetricks yumex-dnf inkscape hplip-common hplip-libs hplip-gui
 dnf -y autoremove baobab cheese epiphany gnome-{characters,contacts,dictionary,font-viewer,logs,maps,user-docs} gucharmap sushi
 echo "[vscode]" > /etc/yum.repos.d/vscode.repo
