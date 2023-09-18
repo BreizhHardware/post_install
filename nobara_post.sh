@@ -12,7 +12,7 @@ then
 fi 
 
 dnf -y --nogpgcheck --refresh upgrade
-dnf install -y gnome-shell-extension-dash-to-dock htop nmon inxi figlet btop nvtop
+dnf install -y gnome-shell-extension-dash-to-dock htop nmon inxi figlet btop nvtop google-noto-fonts
 dnf install -y gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
 dnf install -y lame\* --exclude=lame-devel
 dnf group upgrade -y --with-optional Multimedia
@@ -37,7 +37,7 @@ chmod u+x hwcheck.sh
 sh hwcheck.sh
 dnf install zsh
 flatpak install -y spotify
-curl -sS https://starship.rs/install.sh | sh
+dnf autoremove
 
 
 echo 'Préparation terminée, executez il est recommandé de redémarrer ! Pour appliquer les icons ouvrez ajustement et appliquez kora. Pour la customisation de zsh, executez sh -c "$(curl -fsSL https://raw.githubusercontent.com/BreizhHardware/post_install/main/zsh_custom.sh)"'
